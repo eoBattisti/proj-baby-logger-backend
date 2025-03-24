@@ -1,0 +1,14 @@
+services:
+
+  backend:
+    container_name: baby-logger-backend
+    build: 
+      context: ./src/
+      dockerfile: Dockerfile
+      args:
+        - PORT=8080
+    command: ./docker/run.sh start
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./backend:/app
